@@ -6,7 +6,7 @@ const state = require('./state.js')
 const googleSearchCredentials = require('../credentials/google-search.json')
 
 async function robot() {
-  console.log('> [image-robot] Starting...')
+  console.log('> [image-robot] Iniciando...')
   const content = state.load()
 
   await fetchImagesOfAllSentences(content)
@@ -58,7 +58,7 @@ async function robot() {
 
         try {
           if (content.downloadedImages.includes(imageUrl)) {
-            throw new Error('Image already downloaded')
+            throw new Error('Imagem já baixada')
           }
 
           await downloadAndSave(imageUrl, `${sentenceIndex}-original.png`)
